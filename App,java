@@ -1,0 +1,40 @@
+//app.java
+//created by :Daniel Myers
+
+import java.io.Serializable;
+
+public class App extends Product implements Serializable{
+	private static final long serialVersionUID = 5716688969325492984L;
+
+	public enum Type{GAME, PRODUCTIVITY, EDUCATION};
+	private Type gameType;
+	private String developer;
+	
+	public App(String t, double p, Date pD, Type gT, String d) {
+		super(t, p, pD);
+		setGameType(gT);
+		setDeveloper(d);
+	}
+	
+	public void setGameType(Type gT){
+		gameType = gT;
+	}
+	// public Type getGameType(){
+		return gameType;
+	}
+	
+	public void setDeveloper(String d){
+		developer = d;
+	}
+	public String getDeveloper(){
+		return developer;
+	}
+	
+	public void setNumberOfSongsPurchased(int nOSP){};
+	
+	public int getNumberOfSongsPurchased(){return 1;}
+	
+	public String toString(){
+		return (super.toString() + " " + getGameType() + " " + getDeveloper());
+	}
+}
